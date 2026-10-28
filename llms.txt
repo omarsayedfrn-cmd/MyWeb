@@ -2,8 +2,8 @@
 
 سولفر (Solver) — تطبيق أندرويد بيحل واجبات منصات QUREO (كريو) و SPRIX (سبريكس) لطلاب الصف الأول والثاني الثانوي في مصر، بالعربي والإنجليزي. التحميل مجاني.
 
-- الموقع الرسمي: https://solverapp-zeta.vercel.app/
-- تحميل التطبيق (APK): https://solverapp-zeta.vercel.app/downloads/Solver-Platform.apk
+- [الموقع الرسمي](https://solverapp-zeta.vercel.app/)
+- [تحميل التطبيق (APK)](https://solverapp-zeta.vercel.app/downloads/Solver-Platform.apk)
 
 ## حقائق ثابتة
 
