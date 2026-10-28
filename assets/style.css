@@ -4,25 +4,25 @@
 
 @font-face {
   font-family: 'Tajawal';
-  src: url('fonts/Tajawal-Regular.ttf') format('truetype');
+  src: url('fonts/Tajawal-Regular.woff2') format('woff2'), url('fonts/Tajawal-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tajawal';
-  src: url('fonts/Tajawal-Medium.ttf') format('truetype');
+  src: url('fonts/Tajawal-Medium.woff2') format('woff2'), url('fonts/Tajawal-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tajawal';
-  src: url('fonts/Tajawal-Bold.ttf') format('truetype');
+  src: url('fonts/Tajawal-Bold.woff2') format('woff2'), url('fonts/Tajawal-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tajawal';
-  src: url('fonts/Tajawal-ExtraBold.ttf') format('truetype');
+  src: url('fonts/Tajawal-ExtraBold.woff2') format('woff2'), url('fonts/Tajawal-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-display: swap;
 }
@@ -45,6 +45,22 @@
   --radius: 14px;
   --radius-2: 12px;
   --sect: clamp(72px, 10vw, 120px);
+}
+
+.geo-answer {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-inline-start: 3px solid var(--gold);
+  background: var(--surface);
+  border-radius: 0 var(--radius-2) var(--radius-2) 0;
+  color: var(--ink-2);
+  max-width: 620px;
+}
+
+.glossary {
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: 13px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
