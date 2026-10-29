@@ -177,6 +177,22 @@ body {
   line-height: 1.22;
   max-width: 20ch;
 }
+.js .hero h1[data-type] { visibility: hidden; }
+.js .hero h1.type-live,
+.js .hero h1.type-done { visibility: visible; }
+.type-caret {
+  display: inline-block;
+  width: 2px;
+  height: .92em;
+  margin-inline-start: 3px;
+  vertical-align: -.1em;
+  background: var(--gold);
+  animation: caretBlink .9s steps(1) infinite;
+}
+@keyframes caretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
 .hero-copy > p:not(.hero-sub):not(.hero-foot) { color: var(--ink-2); }
 .hero-sub {
   margin-top: 24px;
@@ -255,6 +271,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .log-lines li { opacity: 1; animation: none; }
+  .js .hero h1[data-type] { visibility: visible; }
+  .type-caret { animation: none; }
 }
 
 /* ── الأقسام ── */
@@ -426,6 +444,7 @@ section h2 {
 }
 @media (max-width: 720px) {
   .site-head nav { display: none; }
+  .geo-answer { display: none; }
   .jwa-list { grid-template-columns: 1fr; }
   .mokus-list li { grid-template-columns: 1fr auto; }
   .mokus-plat { display: none; }
