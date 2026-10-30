@@ -1,5 +1,4 @@
-/* ── سولفر — أنيميشن كتابة العنوان الرئيسي ───────────────────────────
-   الكشف بالـ opacity فقط (مفيش تغيير في المحتوى) عشان مانسببش Layout Shift. */
+/* ── سولفر — أنيميشن كتابة العنوان الرئيسي بالكيبورد ─────────────────── */
 (function () {
   'use strict';
 
@@ -7,8 +6,14 @@
   if (!title) return;
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    title.classList.add('type-done');
+    return;
+  }
 
   var segments = [];
+  var order = [];
+
   Array.prototype.forEach.call(title.childNodes, function (node) {
     var cls;
     if (node.nodeType === 3) {
@@ -20,7 +25,9 @@
     }
     var text = node.textContent;
     if (!text.length) return;
-    segments.push({ cls: cls, text: text });
+    var seg = { cls: cls, full: text, shown: 0, node: document.createTextNode('') };
+    var si = segments.push(seg) - 1;
+    for (var i = 0; i < text.length; i++) order.push(si);
   });
 
   if (!segments.length) return;
@@ -29,51 +36,37 @@
   caret.className = 'type-caret';
   caret.setAttribute('aria-hidden', 'true');
 
-  var spans = [];
   while (title.firstChild) title.removeChild(title.firstChild);
-
   segments.forEach(function (seg) {
-    var parent = title;
     if (seg.cls) {
-      parent = document.createElement('span');
-      parent.className = seg.cls;
-      title.appendChild(parent);
-    }
-    for (var i = 0; i < seg.text.length; i++) {
-      var ch = seg.text.charAt(i);
-      if (ch === ' ') {
-        parent.appendChild(document.createTextNode(' '));
-        continue;
-      }
-      var span = document.createElement('span');
-      span.className = 'tw';
-      span.textContent = ch;
-      parent.appendChild(span);
-      spans.push(span);
+      var wrap = document.createElement('span');
+      wrap.className = seg.cls;
+      wrap.appendChild(seg.node);
+      title.appendChild(wrap);
+    } else {
+      title.appendChild(seg.node);
     }
   });
-
-  if (reduce) {
-    title.classList.add('type-done');
-    return;
-  }
-
   title.appendChild(caret);
   title.classList.add('type-live');
 
   var CHAR_MS = 45;
+  var SPACE_MS = 90;
   var START_MS = 250;
   var idx = 0;
 
   function reveal() {
-    if (idx >= spans.length) {
+    if (idx >= order.length) {
       title.classList.add('type-done');
       caret.remove();
       return;
     }
-    spans[idx].classList.add('on');
+    var seg = segments[order[idx]];
+    seg.shown += 1;
+    seg.node.textContent = seg.full.slice(0, seg.shown);
+    var ch = seg.full.charAt(seg.shown - 1);
     idx += 1;
-    window.setTimeout(reveal, CHAR_MS);
+    window.setTimeout(reveal, ch === ' ' ? SPACE_MS : CHAR_MS);
   }
 
   window.setTimeout(reveal, START_MS);
