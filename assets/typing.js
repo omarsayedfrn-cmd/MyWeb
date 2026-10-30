@@ -32,6 +32,9 @@
 
   if (!segments.length) return;
 
+  /* احجز ارتفاع العنوان النهائي قبل تفريغ النص حتى لا يتحرك المحتوى تحته (CLS). */
+  var finalHeight = title.getBoundingClientRect().height;
+
   var caret = document.createElement('span');
   caret.className = 'type-caret';
   caret.setAttribute('aria-hidden', 'true');
@@ -48,7 +51,28 @@
     }
   });
   title.appendChild(caret);
+
+  function applyHeight(h) {
+    if (h > 0) title.style.minHeight = Math.ceil(h) + 'px';
+  }
+  applyHeight(finalHeight);
   title.classList.add('type-live');
+
+  /* إعادة القياس عند تغيّر عرض الشاشة أو بعد اكتمال تحميل الخط. */
+  function remeasure() {
+    segments.forEach(function (seg) { seg.node.textContent = seg.full; });
+    var h = title.getBoundingClientRect().height;
+    segments.forEach(function (seg) { seg.node.textContent = seg.full.slice(0, seg.shown); });
+    applyHeight(h);
+  }
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(remeasure, 150);
+  });
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(remeasure);
+  }
 
   var CHAR_MS = 45;
   var SPACE_MS = 90;

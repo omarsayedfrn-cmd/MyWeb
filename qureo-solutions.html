@@ -52,24 +52,30 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="Solver | App — الصفحة الرئيسية">
       <img class="brand-mark" src="/assets/branding/logo.png" alt="" aria-hidden="true" width="40" height="40">
       <span class="brand-name">Solver | App</span>
     </a>
-    <nav aria-label="التنقل الرئيسي">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="فتح القائمة">
+      <span class="menu-bars" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" aria-label="التنقل الرئيسي">
       <a class="head-link" href="/qureo-solutions">حل كيريو</a>
       <a class="head-link" href="/sprix-solutions">حل سبريكس</a>
       <a class="head-link" href="/qureo-grade-10">أولى ثانوي</a>
       <a class="head-link" href="/qureo-grade-11">تانية ثانوي</a>
       <a class="head-link" href="/faq">الأسئلة</a>
+      <a class="btn btn-primary menu-cta" href="/download">نزّل التطبيق</a>
     </nav>
     <a class="btn btn-primary head-cta" href="/download">نزّل التطبيق</a>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="page-head wrap">
     <nav class="crumbs" aria-label="مسار التنقل">
       <a href="/">الرئيسية</a>
@@ -182,6 +188,8 @@
     <p>© 2026 سولفر</p>
   </div>
 </footer>
+
+<script src="/assets/nav.js" defer></script>
 
 </body>
 </html>
