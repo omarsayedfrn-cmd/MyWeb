@@ -17,4 +17,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://solverapp-zeta.vercel.app/sitemap.xml
+Sitemap: https://solver.site/sitemap.xml

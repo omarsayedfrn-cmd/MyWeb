@@ -109,6 +109,12 @@ body {
   color: #fff;
 }
 .btn-primary:hover { background: var(--burgundy-2); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { border-color: var(--ink-2); }
 .btn-big {
   font-size: 1.1rem;
   padding: 14px 34px;
@@ -472,7 +478,10 @@ section h2 {
 .mokus-name {
   font-weight: 700;
   font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
 }
+a.mokus-name:hover { color: var(--gold); }
 .mokus-plat {
   color: var(--ink-2);
   font-weight: 700;
@@ -594,7 +603,8 @@ section h2 {
 }
 .site-foot nav {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
   margin-inline-start: auto;
 }
 .site-foot a {
@@ -605,15 +615,137 @@ section h2 {
 }
 .site-foot a:hover { color: var(--ink); }
 
+/* ── صفحات المحتوى ── */
+.page-head {
+  padding-top: clamp(40px, 7vw, 80px);
+  padding-bottom: 8px;
+}
+.page-head h1 {
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.3;
+  max-width: 26ch;
+}
+.page-head .lead {
+  margin-top: 16px;
+  max-width: 62ch;
+  color: var(--ink-2);
+}
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  color: var(--ink-2);
+  margin-bottom: 18px;
+}
+.crumbs a { color: var(--ink-2); text-decoration: none; }
+.crumbs a:hover { color: var(--ink); }
+.crumbs span[aria-hidden] { color: var(--line); }
+
+.prose {
+  max-width: 68ch;
+  margin-top: 28px;
+}
+.prose h2 {
+  margin-top: 40px;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+}
+.prose h3 {
+  margin-top: 28px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.prose p { margin-top: 14px; color: var(--ink-2); }
+.prose ul, .prose ol { margin: 14px 0 0; padding-inline-start: 22px; color: var(--ink-2); }
+.prose li { margin-top: 8px; }
+.prose a { color: var(--gold); text-decoration: none; }
+.prose a:hover { text-decoration: underline; }
+.prose strong { color: var(--ink); }
+
+.facts {
+  list-style: none;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.facts li {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 8px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.facts dt, .facts .k { color: var(--ink-2); font-weight: 500; }
+.facts .v { color: var(--ink); font-weight: 700; }
+
+.cards {
+  list-style: none;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cards a, .cards li > div {
+  display: block;
+  padding: 24px;
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--ink);
+}
+.cards a:hover { background: var(--raised); }
+.cards strong { display: block; font-size: 1.1rem; font-weight: 700; }
+.cards p { margin-top: 6px; color: var(--ink-2); font-size: .95rem; }
+
+.cta-band {
+  margin-top: var(--sect);
+  padding: clamp(28px, 5vw, 44px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.cta-band h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
+.cta-band p { margin-top: 6px; color: var(--ink-2); }
+.cta-band--tight { margin-top: 32px; }
+
+.related {
+  margin-top: var(--sect);
+  padding-bottom: var(--sect);
+}
+.related h2 { font-size: 1.4rem; }
+.related ul { list-style: none; margin-top: 20px; border-top: 1px solid var(--line); }
+.related li { border-bottom: 1px solid var(--line); }
+.related a {
+  display: block;
+  padding: 16px 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+.related a:hover { color: var(--gold); }
+
+.legal { padding-bottom: var(--sect); }
+
 /* ── استجابة ── */
 @media (max-width: 940px) {
   .hero { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .site-head nav { display: none; }
-  .geo-answer { display: none; }
   .jwa-list { grid-template-columns: 1fr; }
   .mokus-list li { grid-template-columns: 1fr auto; }
   .mokus-plat { display: none; }
   .kez li { gap: 8px 18px; }
+  .cards { grid-template-columns: 1fr; }
+  .facts li { grid-template-columns: 1fr; gap: 2px; }
+  .geo-answer { font-size: .95rem; }
 }
