@@ -716,6 +716,7 @@ a.mokus-name:hover { color: var(--gold); }
 .cta-band h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
 .cta-band p { margin-top: 6px; color: var(--ink-2); }
 .cta-band--tight { margin-top: 32px; }
+.cta-end { padding-bottom: var(--sect); }
 
 .related {
   margin-top: var(--sect);
