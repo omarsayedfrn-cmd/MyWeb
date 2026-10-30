@@ -581,7 +581,7 @@ a.mokus-name:hover { color: var(--gold); }
   padding-bottom: 22px;
   max-width: 62ch;
 }
-.asaelah { padding-bottom: var(--sect); }
+.asaelah.pad-b { padding-bottom: var(--sect); }
 
 /* الفوتر */
 .site-foot {
@@ -702,7 +702,6 @@ a.mokus-name:hover { color: var(--gold); }
 .cards p { margin-top: 6px; color: var(--ink-2); font-size: .95rem; }
 
 .cta-band {
-  margin-top: var(--sect);
   padding: clamp(28px, 5vw, 44px);
   background: var(--surface);
   border: 1px solid var(--line);
@@ -719,7 +718,6 @@ a.mokus-name:hover { color: var(--gold); }
 .cta-end { padding-bottom: var(--sect); }
 
 .related {
-  margin-top: var(--sect);
   padding-bottom: var(--sect);
 }
 .related h2 { font-size: 1.4rem; }
