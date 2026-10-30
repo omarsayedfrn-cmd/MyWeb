@@ -2,14 +2,14 @@
 
 سولفر (Solver) — تطبيق أندرويد بيحل واجبات منصات QUREO (كيريو/كوريو) و SPRIX (سبريكس) لطلاب الصف الأول والثاني الثانوي في مصر، بالعربي والإنجليزي. التحميل مجاني.
 
-- [الموقع الرسمي](https://solver.site/)
-- [تحميل التطبيق (APK)](https://solver.site/download)
-- [حل منصة كيريو (QUREO)](https://solver.site/qureo-solutions)
-- [حل كيريو أولى ثانوي — جافاسكربت](https://solver.site/qureo-grade-10)
-- [حل كيريو تانية ثانوي — بايثون](https://solver.site/qureo-grade-11)
-- [حل منصة سبريكس (SPRIX) — الثقافة المالية](https://solver.site/sprix-solutions)
-- [الأسئلة الشائعة](https://solver.site/faq)
-- [عن سولفر](https://solver.site/about)
+- [الموقع الرسمي](https://solver-app.site/)
+- [تحميل التطبيق (APK)](https://solver-app.site/download)
+- [حل منصة كيريو (QUREO)](https://solver-app.site/qureo-solutions)
+- [حل كيريو أولى ثانوي — جافاسكربت](https://solver-app.site/qureo-grade-10)
+- [حل كيريو تانية ثانوي — بايثون](https://solver-app.site/qureo-grade-11)
+- [حل منصة سبريكس (SPRIX) — الثقافة المالية](https://solver-app.site/sprix-solutions)
+- [الأسئلة الشائعة](https://solver-app.site/faq)
+- [عن سولفر](https://solver-app.site/about)
 
 ## حقائق ثابتة
 

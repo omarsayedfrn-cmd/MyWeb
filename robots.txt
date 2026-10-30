@@ -17,4 +17,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://solver.site/sitemap.xml
+Sitemap: https://solver-app.site/sitemap.xml

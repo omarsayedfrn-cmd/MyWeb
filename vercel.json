@@ -4,14 +4,14 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.solver.site" }],
-      "destination": "https://solver.site/$1",
+      "has": [{ "type": "host", "value": "www.solver-app.site" }],
+      "destination": "https://solver-app.site/$1",
       "permanent": true
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "solverapp-zeta.vercel.app" }],
-      "destination": "https://solver.site/$1",
+      "destination": "https://solver-app.site/$1",
       "permanent": true
     }
   ],
