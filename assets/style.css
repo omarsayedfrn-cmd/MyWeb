@@ -186,6 +186,9 @@ body {
 .js .hero h1[data-type] { visibility: hidden; }
 .js .hero h1.type-live,
 .js .hero h1.type-done { visibility: visible; }
+.hero h1 .tw { opacity: 0; transition: opacity .18s linear; }
+.hero h1 .tw.on { opacity: 1; }
+.js .hero h1.type-done .tw { opacity: 1; }
 .type-caret {
   display: inline-block;
   width: 2px;
@@ -446,6 +449,7 @@ body {
   html { scroll-behavior: auto; }
   .log-lines li { opacity: 1; animation: none; }
   .js .hero h1[data-type] { visibility: visible; }
+  .hero h1 .tw { opacity: 1; transition: none; }
   .type-caret { animation: none; }
 }
 
@@ -692,8 +696,13 @@ a.mokus-name:hover { color: var(--gold); }
 .prose p { margin-top: 14px; color: var(--ink-2); }
 .prose ul, .prose ol { margin: 14px 0 0; padding-inline-start: 22px; color: var(--ink-2); }
 .prose li { margin-top: 8px; }
-.prose a { color: var(--gold); text-decoration: none; }
-.prose a:hover { text-decoration: underline; }
+.prose a, .kez a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ink-2);
+}
+.prose a:hover, .kez a:hover { text-decoration-color: var(--gold); }
 .prose strong { color: var(--ink); }
 
 .facts {
